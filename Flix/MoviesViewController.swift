@@ -7,7 +7,10 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController {
+class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     
     // store data from API in view controller to be accessed by program
     var movies = [[String: Any]]() // array of dictionaries
@@ -15,6 +18,9 @@ class MoviesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
 
 //        print("movies")
         
@@ -42,6 +48,21 @@ class MoviesViewController: UIViewController {
         }
         task.resume()
 
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // number of rows
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        cell.textLabel!.text = "row \(indexPath.row)"
+        
+        return cell
     }
     
 
