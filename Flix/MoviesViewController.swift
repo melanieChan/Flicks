@@ -61,7 +61,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     // each row for each movie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         
         // get movie (dictionary)
         let movie = movies[indexPath.row]
@@ -69,7 +69,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // get movie title from dictionary (key - title, value - movie's title)
         let title = movie["title"] as! String
         
-        cell.textLabel!.text = "\(title)"
+        //cell.textLabel!.text = "\(title)"
+        cell.titleLabel.text = title
         
         return cell
     }
