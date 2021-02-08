@@ -23,5 +23,12 @@ iPhone 11
 
 ![](https://i.imgur.com/J7PTAc3.gif)
 
+IPod Touch
+
+![](https://i.imgur.com/vG7z00L.gif)
+
+
+GIF created with [ezgif.com](https://ezgif.com/video-to-gif).
+
 ### Notes
 Challenges: using Cocoapods, working with constraints
