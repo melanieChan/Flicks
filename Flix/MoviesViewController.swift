@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -69,8 +70,20 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // get movie title from dictionary (key - title, value - movie's title)
         let title = movie["title"] as! String
         
-        //cell.textLabel!.text = "\(title)"
+        let synopsis = movie["overview"] as! String
+        
+        // set outlets to display data
         cell.titleLabel.text = title
+        
+        cell.synopsisLabel.text = synopsis
+        
+        // poster
+        let baseUrl = "https://image.tmdb.org/t/p/w185" // base url of images from this API
+        let posterPath = movie["poster_path"] as! String    // string of url that leads to specific poster
+        let posterUrl = URL(string: baseUrl + posterPath)   // combines base url & poster path into complete url
+        
+        // set image
+        cell.posterView.af_setImage(withURL: posterUrl!)
         
         return cell
     }
