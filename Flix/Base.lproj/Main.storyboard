@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t47-88-CFi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -9,7 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="0ER-jI-Orx">
+            <objects>
+                <navigationController id="t47-88-CFi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v49-hE-71a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hmD-wL-iyv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rYQ-H7-MYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="59"/>
+        </scene>
+        <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,6 +84,7 @@
                                             <outlet property="posterView" destination="LzH-Ra-i4u" id="7S7-N0-Vip"/>
                                             <outlet property="synopsisLabel" destination="YaP-Xg-ybe" id="z0j-Qf-6NL"/>
                                             <outlet property="titleLabel" destination="gJi-n8-YFP" id="Usw-n8-dJJ"/>
+                                            <segue destination="00n-WK-V9I" kind="show" id="CyD-co-C2C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -82,6 +99,7 @@
                             <constraint firstItem="jl2-df-nC9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qvU-P2-hhf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Movies" id="Qf7-Sc-1zm"/>
                     <connections>
                         <outlet property="tableView" destination="jl2-df-nC9" id="Zqd-2g-4jk"/>
                     </connections>
@@ -89,6 +107,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="58.928571428571423"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="my9-gY-xF8">
+            <objects>
+                <viewController id="00n-WK-V9I" customClass="MovieDetailsViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fwz-an-yHS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uer-um-rdJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="fgY-Mi-EYC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5G-b8-Svz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="59"/>
         </scene>
     </scenes>
     <resources>

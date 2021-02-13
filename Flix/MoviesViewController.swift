@@ -36,7 +36,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
            } else if let data = data {
               let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
-            print(dataDictionary)
+//            print(dataDictionary)
             
             // get data from dictionary and store into class variable
             self.movies = dataDictionary["results"] as! [[String:Any]]
@@ -89,14 +89,17 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    
+        print("loading movie details")
+    
     }
-    */
+    
 
 }
