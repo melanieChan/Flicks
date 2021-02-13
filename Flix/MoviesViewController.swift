@@ -97,8 +97,24 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     
-        print("loading movie details")
-    
+//        print("loading movie details")
+        
+        // get the movie that was selected
+        let cell = sender as! UITableViewCell   // selected movie is sender
+        let indexPath = tableView.indexPath(for: cell)!  // get index of selected cell
+        let movie = movies[indexPath.row]   // get movie from API data using movie info's index
+        
+        // pass selected movie to movie details view controller
+        // to display details of selected movie
+        
+        // get view controller that will be shown
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        
+        // give that view controller info about movie in order to display info
+        detailsViewController.movie = movie
+        
+        // deselects cell after going back to movies main page from movie details screen
+//        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 
