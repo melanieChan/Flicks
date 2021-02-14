@@ -22,10 +22,12 @@ class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(movie["title"])
         
         titleLabel.text = movie["title"] as? String
+//        titleLabel.sizeToFit()  // make sure content of label fits in screen
+        
         synopsisLabel.text = movie["overview"] as? String
+//        synopsisLabel.sizeToFit()
         
         // Images
         let baseUrl = "https://image.tmdb.org/t/p/w185" // base url of images from this API
