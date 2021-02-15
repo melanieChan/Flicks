@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class MovieGridViewController: UIViewController {
+class MovieGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // store data from API
     var movies = [[String: Any]]() // array of dictionaries
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
         // Get superhero movies
         // network request to get data from API
@@ -27,11 +34,11 @@ class MovieGridViewController: UIViewController {
            } else if let data = data {
               let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
-//            print(dataDictionary)
             
             // get data from dictionary and store into class variable
             self.movies = dataDictionary["results"] as! [[String:Any]]
             
+            self.collectionView.reloadData()
 //            print(self.movies)
 
            }
@@ -40,6 +47,28 @@ class MovieGridViewController: UIViewController {
 
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    // every cell will display poster
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieGridCell", for: indexPath) as! MovieGridCell
+        
+        let movie = movies[indexPath.item]
+        
+        let baseUrl = "https://image.tmdb.org/t/p/w185" // base url of images from this API
+        let posterPath = movie["poster_path"] as! String    // string of url that leads to specific poster
+        let posterUrl = URL(string: baseUrl + posterPath)   // combines base url & poster path into complete url
+        
+        // set image
+        cell.posterView.af_setImage(withURL: posterUrl!)
+
+        
+        return cell
+    }
+
 
     /*
     // MARK: - Navigation
