@@ -70,9 +70,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-C3-WUp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-C3-WUp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OA5-SK-3H8">
                                     <size key="itemSize" width="197" height="232"/>
@@ -104,6 +103,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yAq-lZ-BzJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fVd-C3-WUp" firstAttribute="leading" secondItem="yAq-lZ-BzJ" secondAttribute="leading" id="IFO-b8-8BE"/>
+                            <constraint firstItem="fVd-C3-WUp" firstAttribute="top" secondItem="HCE-go-J9E" secondAttribute="topMargin" id="ckO-eF-W4L"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fVd-C3-WUp" secondAttribute="bottom" id="tw4-Y4-opu"/>
+                            <constraint firstItem="fVd-C3-WUp" firstAttribute="trailing" secondItem="yAq-lZ-BzJ" secondAttribute="trailing" id="uTU-v4-SQP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Superhero" id="b4O-aU-1zh"/>
                     <connections>
