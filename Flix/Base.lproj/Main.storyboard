@@ -83,13 +83,13 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieGridCell" id="CGY-i2-cII" customClass="MovieGridCell" customModule="Flix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="197" height="232"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="knc-Ue-Azl">
                                             <rect key="frame" x="0.0" y="0.0" width="197" height="232"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taj-sa-0E0">
-                                                    <rect key="frame" x="8" y="0.0" width="189" height="232"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="189" height="232"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>

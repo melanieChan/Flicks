@@ -21,6 +21,16 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        // layout
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 4
+        
+        // width of one cell
+        // width of screen not including white space in between columns, divided by 3 columns
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        layout.itemSize = CGSize(width: width, height: width * 1.5)
 
         // Get superhero movies
         // network request to get data from API
