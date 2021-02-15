@@ -38,10 +38,15 @@ class MovieDetailsViewController: UIViewController {
         posterImage.af_setImage(withURL: posterUrl!)    // set image
 
         // backdrop
-        let backdropPath = movie["backdrop_path"] as! String    // string of url that leads to specific poster
-        let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780" + backdropPath)   // combines base url & poster path into complete url
-        backdropImage.af_setImage(withURL: backdropUrl!)    // set image
+        // it's not nil nor an empty string
+        if let backdropPath = movie["backdrop_path"] as? String, !backdropPath.isEmpty {
+        
+//            print(movie["backdrop_path"])
 
+//            let backdropPath = movie["backdrop_path"] as! String    // string of url that leads to specific poster
+            let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780" + backdropPath)   // combines base url & poster path into complete url
+            backdropImage.af_setImage(withURL: backdropUrl!)    // set image
+        }
     }
     
 
