@@ -24,7 +24,7 @@ https://i.imgur.com/nufq2Qw.gif
 
 
 ### Notes
-Some movies didn't have backdrop images, so I put a null check around the part that retreives and displays the backdrop image.
+Some movies didn't have backdrop images, so I put a null check around the part that retrieves and displays the backdrop image.
 
 ---
 
